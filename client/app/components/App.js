@@ -1,21 +1,20 @@
 import React, {Component} from 'react';
-import PeopleList from './../containers/PeopleList';
-import MessagesList from './../containers/MessagesList';
 import {Provider} from 'react-redux'
 import store from './../store/index'
+import ChatWrap from './../containers/ChatWrap'
+
 window.store = store;
 
-class Chat extends Component {
+class App extends Component {
     render() {
       return(
         <Provider store={store}>
           <div className="container clearfix">
-            <PeopleList/>
-            <MessagesList/>
+            <ChatWrap/>
           </div>
         </Provider>
     )
   }
 }
 
-export default Chat;
+export default App;

@@ -1,8 +1,13 @@
 import React from 'react';
 import {render} from 'react-dom';
-import Chat from './components/Chat'
+import App from './components/App'
 import './assets/style/chat.sass'
 import { AppContainer } from 'react-hot-loader';
+import ws from './utill/ws'
+
+window.ws = ws;
+
+localStorage.removeItem('auth');
 
 const renderApp = Comment => {
   render(
@@ -13,15 +18,8 @@ const renderApp = Comment => {
   )
 };
 
-renderApp(Chat);
+renderApp(App);
 
 if(module.hot) {
-  module.hot.accept('containers/Chat', () => {renderApp(Chat)});
+  module.hot.accept('containers/App', () => {renderApp(App)});
 }
-
-// render (
-//     <Chat/>,
-//     document.querySelector('#mount_place')
-// );
-
-// https://codepen.io/drehimself/pen/KdXwxR
