@@ -1,10 +1,11 @@
 {
-  "presets": ["es2015", "stage-0", "react"],
+  "presets": [["es2015", {"modules": false}], "stage-0", "react"],
   "plugins": [
     ["transform-runtime", {
       "polyfill": false,
       "regenerator": true
     }],
-    "react-html-attrs"
+    "react-html-attrs",
+    "react-hot-loader/babel"
   ]
 }

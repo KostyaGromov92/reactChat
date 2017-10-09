@@ -7,7 +7,10 @@ const injectConfig = new HtmlWebpackPlugin({
 
 module.exports = {
   context: __dirname + '/app',
-  entry: './index.js',
+  entry: [
+    './index.js',
+    'react-hot-loader/patch',
+  ],
   output: {
     path: __dirname + '/build',
     filename: 'bundle.js'
